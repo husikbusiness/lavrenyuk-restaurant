@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан Lavrenyuk Gourmet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Lavrenyuk <span>Gourmet</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Головна</a></li>
+            <li><a href="#" onclick="showPage('services')">Послуги (Меню)</a></li>
+            <li><a href="#" onclick="showPage('contacts')">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Вітаємо у Lavrenyuk Gourmet</h1>
+            <p>Смак, що залишається в серці. Найкращі страви від майстрів своєї справи.</p>
+            <button class="btn" onclick="showPage('services')">Наші послуги</button>
+        </div>
+    </section>
+
+    <section id="services" class="page">
+        <h2>Наші послуги та меню</h2>
+        <div id="services-list" class="services-container">
+            </div>
+    </section>
+
+    <section id="contacts" class="page">
+        <h2>Зв'язатися з нами</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p><strong>Адреса:</strong> м. Київ, вул. Інтернет-технологій, 49</p>
+                <p><strong>Телефон:</strong> +38 (044) 123-45-67</p>
+                <p><strong>Виконавець:</strong> Лавренюк Данило, гр. 4-9</p>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="userName" placeholder="Ваше ім'я" required>
+                <input type="email" id="userEmail" placeholder="Ваш Email" required>
+                <textarea id="userMessage" placeholder="Ваше повідомлення" required></textarea>
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+            <div id="formResponse" class="hidden"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Всі права захищені. Виконав: <strong>Лавренюк Данило</strong>, група 4-9</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

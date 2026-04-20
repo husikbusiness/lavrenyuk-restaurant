@@ -1,0 +1,45 @@
+// 1. Перемикання між сторінками
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+}
+
+// 2. Масив послуг (меню)
+const servicesData = [
+    { name: "Обіднє меню", price: "250 грн", desc: "Повний комплекс: суп, основна страва, напій." },
+    { name: "Вечеря на двох", price: "800 грн", desc: "Романтична атмосфера та авторські страви." },
+    { name: "Організація банкету", price: "від 1000 грн/ос", desc: "Святкування будь-якого масштабу." },
+    { name: "Кейтеринг", price: "від 5000 грн", desc: "Виїзне обслуговування ваших подій." },
+    { name: "Винна дегустація", price: "400 грн", desc: "Добірні вина під керівництвом сомельє." }
+];
+
+// 3. Динамічний вивід послуг
+function renderServices() {
+    const container = document.getElementById('services-list');
+    container.innerHTML = servicesData.map(item => `
+        <div class="service-item">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <p class="price">${item.price}</p>
+        </div>
+    `).join('');
+}
+
+// 4. Обробка форми зворотного зв'язку
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Запобігаємо перезавантаженню сторінки
+    
+    const name = document.getElementById('userName').value;
+    const responseBox = document.getElementById('formResponse');
+    
+    // Імітація роботи
+    responseBox.innerText = `Дякуємо, ${name}! Ваше повідомлення отримано. Ми зв'яжемося з Вами найближчим часом.`;
+    responseBox.classList.remove('hidden');
+    
+    this.reset(); // Очищуємо форму
+});
+
+// Запуск рендеру при завантаженні
+window.onload = renderServices;
