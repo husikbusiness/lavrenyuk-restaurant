@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavrenyuk Gourmet - Ресторан</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Lavrenyuk <span>Gourmet</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Головна</a></li>
+            <li><a href="#" onclick="showPage('services')">Послуги</a></li>
+            <li><a href="#" onclick="showPage('contacts')">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Вітаємо у нашому ресторані</h1>
+            <p>Авторська кухня та затишна атмосфера від Данила Лавренюка.</p>
+            <button class="btn" onclick="showPage('services')">Відкрити меню</button>
+        </div>
+    </section>
+
+    <section id="services" class="page">
+        <h2>Наші послуги та ціни</h2>
+        <div id="services-list" class="services-container">
+            </div>
+    </section>
+
+    <section id="contacts" class="page">
+        <h2>Зв'язатися з нами</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p><strong>Адреса:</strong> м. Київ, вул. Бізнес-Технологій, 4-9</p>
+                <p><strong>Телефон:</strong> +38 (044) 111-22-33</p>
+                <p><strong>Студент:</strong> Лавренюк Данило, група 4-9</p>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="userName" placeholder="Ваше ім'я" required>
+                <textarea id="userMessage" placeholder="Ваше запитання" required></textarea>
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+            <div id="formResponse" class="hidden-msg"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Всі права захищені. Виконав: <strong>Лавренюк Данило</strong>, група 4-9</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
